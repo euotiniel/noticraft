@@ -15,6 +15,7 @@ export default function Home() {
     alt: "iMessage",
   });
   const [description, setDescription] = useState("");
+  const [name, setName] = useState("");
   const [time, setTime] = useState({ hour: "Now", minute: "", second: "" });
   const [day, setDay] = useState<DayOfWeek>("");
   const captureRef = useRef<HTMLDivElement>(null);
@@ -76,6 +77,10 @@ export default function Home() {
     "Yes! Noticraft is the most elegant way to share your notifications with the world";
   const truncatedDescription = truncateText(descriptionText, 120);
 
+  const nameText =
+    name || mainImage.alt
+  const truncatedName = truncateText(nameText, 25);
+
   const handleDownloadImage = async () => {
     if (captureRef.current) {
       const captureElement = captureRef.current;
@@ -125,6 +130,17 @@ export default function Home() {
                   ))}
                 </ul>
               </div>
+            </div>
+            <div>
+              <label className="text-sm text-neutral-300 font-semibold">
+                Name
+              </label>
+              <input
+                className="p-2 w-full mt-2 placeholder:text-neutral-400 text-neutral-300 bg-transparent text-sm rounded-lg resize-none focus:outline-none border border-neutral-700/40"
+                placeholder="Type the name here..."
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
             </div>
             <div>
               <label className="text-sm text-neutral-300 font-semibold">
@@ -234,13 +250,13 @@ export default function Home() {
                     width={48}
                     height={50}
                     alt={mainImage.alt}
-                    className="h-auto w-full object-none"
+                    className="h-auto w-full object-none rounde-lg"
                   />
                 </div>
                 <div>
                   <div className="flex justify-between">
                     <h1 className="text-white font-semibold">
-                      {mainImage.alt}
+                      {truncatedName}
                     </h1>
                     <span className="text-neutral-400/70 text-sm">
                       {getTimeDisplay()}
@@ -256,6 +272,7 @@ export default function Home() {
               ref={captureRef}
               mainImage={mainImage}
               getTimeDisplay={getTimeDisplay}
+              truncatedName={truncatedName}
               truncatedDescription={truncatedDescription}
             />
           </div>
