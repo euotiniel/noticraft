@@ -40,7 +40,7 @@ export default function Footer() {
   return (
     <footer className="w-full flex flex-col md:flex-row items-center justify-between text-neutral-600 dark:text-neutral-400">
       <div>
-        <p className="text-[13.5px] font-normal leading-none">
+        <p className="text-[13.5px] font-normal leading-none text-center">
           2024 &copy;{" "}
           <Link
             href="https://twitter.com/euotiniel"

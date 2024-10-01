@@ -221,7 +221,7 @@ export default function Home() {
           </div>
         </aside>
         <main className="relative w-full flex flex-col items-center justify-center lg:w-2/3 p-4 md:p-6 border border-neutral-700/50 rounded-xl">
-          <div className="absolute top-4 right-6 w-full flex items-center justify-between">
+          <div className="absolute top-4 right-6 w-full flex items-center justify-between z-50">
             <span></span>
             <button
               type="submit"
@@ -233,7 +233,7 @@ export default function Home() {
             </button>
           </div>
           <div className="flex flex-col lg:flex-row gap-4">
-            <div className="bg-black relative min-h-[350px] max-w-xl mx-auto p-14 flex flex-col items-center justify-center border border-neutral-700/50 rounded-3xl shadow-lg">
+            <div className="bg-black relative min-h-[350px] md:min-h-[350px] max-w-full sm:max-w-xl mx-auto p-14 flex flex-col items-center justify-center border border-neutral-700/50 rounded-3xl shadow-lg">
               <div
                 className="absolute h-full w-full"
                 style={{
