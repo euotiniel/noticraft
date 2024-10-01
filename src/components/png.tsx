@@ -7,11 +7,12 @@ type CaptureAreaProps = {
     alt: string;
   };
   getTimeDisplay: () => string;
+  truncatedName: string;
   truncatedDescription: string;
 };
 
 const CaptureArea = forwardRef<HTMLDivElement, CaptureAreaProps>(
-  ({ mainImage, getTimeDisplay, truncatedDescription }, ref) => {
+  ({ mainImage, getTimeDisplay, truncatedName, truncatedDescription }, ref) => {
     return (
       <div
         ref={ref}
@@ -35,12 +36,12 @@ const CaptureArea = forwardRef<HTMLDivElement, CaptureAreaProps>(
                 width={48}
                 height={50}
                 alt={mainImage.alt}
-                className="h-auto w-full object-none"
+                className="h-auto w-full object-none rounde-lg"
               />
             </div>
             <div className="-mt-[18px]">
               <div className="flex justify-between">
-                <h1 className="text-white font-semibold">{mainImage.alt}</h1>
+                <h1 className="text-white font-semibold">{truncatedName}</h1>
                 <span className="text-neutral-400/70 text-sm">
                   {getTimeDisplay()}
                 </span>
