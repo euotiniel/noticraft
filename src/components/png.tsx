@@ -31,12 +31,11 @@ const CaptureArea = forwardRef<HTMLDivElement, CaptureAreaProps>(
           ></div>
           <div className="relative z-10 bg-transparent p-4 border border-neutral-700/50 rounded-3xl shadow-lg w-[385px] flex flex-row items-center justify-center gap-3 max-w-md bg-gradient-to-b to-neutral-950 from-neutral-900/95">
             <div className="rounded-xl bg-transparent border-none">
-              <Image
+              <img
                 src={mainImage.src}
-                width={48}
-                height={50}
+               
                 alt={mainImage.alt}
-                className="h-auto w-full object-none rounde-lg"
+                className="object-none"
               />
             </div>
             <div className="-mt-[18px]">

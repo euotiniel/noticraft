@@ -79,7 +79,7 @@ export default function Home() {
 
   const nameText =
     name || mainImage.alt
-  const truncatedName = truncateText(nameText, 25);
+  const truncatedName = truncateText(nameText, 20);
 
   const handleDownloadImage = async () => {
     if (captureRef.current) {
