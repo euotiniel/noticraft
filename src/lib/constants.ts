@@ -1,1 +1,1 @@
-export const WEBSITE_HOST_URL = 'https://notifake.com'
+export const WEBSITE_HOST_URL = 'https://noticraft.vercel.app/'
